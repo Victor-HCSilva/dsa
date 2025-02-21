@@ -1,14 +1,14 @@
 import pandas as pd
 import numpy as np
-from slicing import df2
+
 dsa_df = pd.read_csv("dataset.csv")
 
-#print(dsa_df.head(5))
-#print(dsa_df.isna().sum())
-
-"""Extaindo a moda da coluna Quantity"""
+# Encontrando a moda da coluna "Quantidade"
 moda = dsa_df["Quantidade"].value_counts().index[0]
 
-print(moda)
+# Preenchendo os valores NA (NaN) na coluna "Quantidade"
+# Usando a atribuição direta para evitar o FutureWarning
+dsa_df["Quantidade"] = dsa_df["Quantidade"].fillna(value = moda)
 
-
+# Verificando se ainda existem valores ausentes
+print(dsa_df.isna().sum())
