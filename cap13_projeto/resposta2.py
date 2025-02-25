@@ -3,6 +3,11 @@ import pandas as pd
 import matplotlib.dates  as mdates
 import datetime
 
+""" 23/02/2025
+Qual o Total de Vendas Por Data do Pedido?
+Demonstre o resultado através de um gráfico de barras.
+"""
+
 data = pd.read_csv("dataset.csv")
 
 data["Data_Pedido"] = pd.to_datetime(data["Data_Pedido"], format="%d/%m/%Y")
