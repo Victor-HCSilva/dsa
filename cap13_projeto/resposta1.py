@@ -8,8 +8,8 @@ data = pd.read_csv("dataset.csv")
 vendas_por_estado = data.groupby('Estado').size()
 
 # Criar o gráfico de barras
-fig, ax = plt.subplots()  # Cria uma figura e um eixo explicitamente
-ax.bar(vendas_por_estado.index, vendas_por_estado.values)  # Corrigido aqui
+fig, ax = plt.subplots() 
+ax.bar(vendas_por_estado.index, vendas_por_estado.values)  
 
 # Labels e título
 plt.ylabel("Quant. de Vendas")
